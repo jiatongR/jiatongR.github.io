@@ -19,7 +19,7 @@ jobs:
         hugo-version: "latest"
 
     - name: Build
-      run: hugo --config config/config.yaml
+      run: hugo --config config/_default/config.yaml
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
