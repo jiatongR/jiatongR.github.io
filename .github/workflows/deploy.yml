@@ -20,15 +20,9 @@ jobs:
           hugo-version: '0.117.0'
           extended: false
 
-      - name: Merge config files
-        run: |
-          cp config/_default/config.yaml config/merged.yaml
-          cat config/_default/languages.yaml >> config/merged.yaml
-          cat config/_default/menus.yaml >> config/merged.yaml
-          cat config/_default/params.yaml >> config/merged.yaml
 
       - name: Build
-        run: hugo --config config/merged.yaml --minify
+        run: hugo
 
 
       - name: Deploy
