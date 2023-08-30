@@ -20,8 +20,16 @@ jobs:
           hugo-version: '0.117.0'
           extended: false
 
+      - name: Merge config files
+        run: |
+          cp config/_dafault/config.yaml config/merged.yaml
+          cat config/_dafault/languages.yaml >> config/merged.yaml
+          cat config/_dafault/menus.yaml >> config/merged.yaml
+          cat config/_dafault/params.yaml >> config/merged.yaml
+
       - name: Build
-        run: hugo
+        run: hugo --config config/merged.yaml --minify
+
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
