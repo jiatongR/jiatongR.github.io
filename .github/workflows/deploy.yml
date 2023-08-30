@@ -22,10 +22,10 @@ jobs:
 
       - name: Merge config files
         run: |
-          cp config/_dafault/config.yaml config/merged.yaml
-          cat config/_dafault/languages.yaml >> config/merged.yaml
-          cat config/_dafault/menus.yaml >> config/merged.yaml
-          cat config/_dafault/params.yaml >> config/merged.yaml
+          cp config/_default/config.yaml config/merged.yaml
+          cat config/_default/languages.yaml >> config/merged.yaml
+          cat config/_default/menus.yaml >> config/merged.yaml
+          cat config/_default/params.yaml >> config/merged.yaml
 
       - name: Build
         run: hugo --config config/merged.yaml --minify
